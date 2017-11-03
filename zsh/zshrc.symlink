@@ -119,3 +119,14 @@ alias vim='nvim'
 #alias :q='exit'
 
 export BROWSER=firefox
+
+
+function dad_joke () {
+    curl -sL https://icanhazdadjoke.com | \
+        cowsay -f "$HOME/.local/share/cowsay/cows/dragon-and-cow.cow"
+}
+
+if [ "$(hostname)" == "student" ]; then
+    dad_joke
+fi
+
