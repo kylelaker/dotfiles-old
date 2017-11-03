@@ -127,7 +127,7 @@ alias shit='sudo $(fc -nl -1)'
 alias nano='nvim'
 alias vi='nvim'
 alias vim='nvim'
-#alias :q='exit'
+alias :q='exit'
 
 export BROWSER=firefox
 
