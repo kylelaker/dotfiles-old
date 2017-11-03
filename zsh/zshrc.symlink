@@ -126,7 +126,7 @@ function dad_joke () {
         cowsay -f "$HOME/.local/share/cowsay/cows/dragon-and-cow.cow"
 }
 
-if [ "$(hostname)" == "student" ]; then
+if [[ "$(hostname)" == "student" ]]; then
     dad_joke
 fi
 
