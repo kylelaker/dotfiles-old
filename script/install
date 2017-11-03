@@ -2,13 +2,17 @@
 #
 # Run all dotfiles installers.
 
-set -e
-
 cd "$(dirname $0)"/..
 
 # Run Homebrew through the Brewfile
-echo "› brew bundle"
-brew bundle
+if [ "$(uname -s)" == "Darwin" ]; then
+    echo "› brew bundle"
+    brew bundle
+fi
 
 # find the installers and run them iteratively
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+find . -name install.sh | while read installer ; do bash -c "${installer}" ; done
+
+# Run the bootstrap script
+script/bootstrap
+

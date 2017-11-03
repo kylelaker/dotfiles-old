@@ -45,6 +45,10 @@ There's a few special files in the hierarchy.
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
+- **topic/\*.conflink**: Any file ending in `*.conflink` gets symlinked into your
+  `$HOME/.config/topic`. This is so you can keep those versioned but still be
+  able to put them in `$HOME/.config`. These files get symlinked automatically
+  when you run `script/bootstrap`.
 
 ## install
 
@@ -53,7 +57,7 @@ Run this:
 ```sh
 git clone https://github.com/holman/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-script/bootstrap
+script/install
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
@@ -86,3 +90,4 @@ weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
 dotfiles were an easy way to get into bash customization, and then to jump ship
 to zsh a bit later. A decent amount of the code in these dotfiles stem or are
 inspired from Ryan's original project.
+

@@ -1,0 +1,9 @@
+[Unit]
+Description=Displays an alert if the battery is low
+
+[Service]
+Type=oneshot
+ExecStart=/home/lakerka/.local/bin/low_battery
+
+[Install]
+WantedBy=basic.target

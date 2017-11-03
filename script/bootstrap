@@ -130,9 +130,18 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
+  # Copy things that go into $HOME/.whatever
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+
+  # Copy things that go into $HOME/.config/whatever
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.conflink' -not -path '*.git*')
+  do
+    dst="$HOME/.config/$(basename $(dirname $src))/$(basename "${src%.*}")"
+    mkdir -p "$(dirname "$dst")"
     link_file "$src" "$dst"
   done
 }
@@ -151,6 +160,9 @@ then
     fail "error installing dependencies"
   fi
 fi
+
+info "running post scripts"
+"$DOTFILES_ROOT"/script/post
 
 echo ''
 echo '  All installed!'

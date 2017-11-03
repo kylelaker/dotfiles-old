@@ -1,0 +1,10 @@
+[Unit]
+Description=Battery check timer
+
+[Timer]
+OnBootSec=0min
+OnCalendar=*:0/1
+Unit=battery-check.service
+
+[Install]
+WantedBy=basic.target

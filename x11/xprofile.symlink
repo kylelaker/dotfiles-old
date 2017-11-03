@@ -1,0 +1,6 @@
+#xss-lock -- dm-tool lock &
+#GDK_SCALE=1.5
+#~/.fehbg &
+#redshift -l geoclue2 &
+redshift -l 38.438273:-78.873423 
+firefox
