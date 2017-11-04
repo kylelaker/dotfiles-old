@@ -10,4 +10,5 @@ function install_oh_my_zsh() {
     rm "${script_dir}"
 }
 
+echo "installing oh-my-zsh"
 install_oh_my_zsh

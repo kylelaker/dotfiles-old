@@ -24,4 +24,5 @@ function install_fonts() {
     rm -rf ${SF_ZIP_LOC} ${SF_DIR}
 }
 
+echo "installing fonts"
 install_fonts
