@@ -9,6 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id firefox
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
 set $mod Mod4
 set $terminal i3-sensible-terminal
 set $editor vim
@@ -191,6 +194,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -201,6 +206,9 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Control+Shift+Left move workspace prev
+bindsym $mod+Control+Shift+Right move workspace next
+
 
 # Console binding
 bindsym $mod+Return exec $terminal
@@ -248,8 +256,5 @@ bindsym $mod+Shift+c reload
 
 # Specific software
 bindsym $mod+Shift+f exec --no-startup-id firefox
+bindsym $mod+Shift+n exec --no-startup-id firefox --private-window
 bindsym $mod+Shift+o exec --no-startup-id libreoffice
-
-#Auto start programs
-#exec --no-startup-id redshift -l 38.438273:-78.873423 
-exec --no-startup-id firefox
