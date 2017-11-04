@@ -51,7 +51,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git debian sudo)
+if [[ "$(uname -s)" == "Linux" ]]; then
+    plugins=(git debian sudo)
+else
+    plugins=(git osx sudo)
+fi
 
 # User configuration
 
@@ -62,9 +66,16 @@ export MANPATH="$HOME/.local/share/man:/usr/local/man:$MANPATH"
 export PATH="$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source /usr/share/doc/pkgfile/command-not-found.zsh
-source $HOME/.zsh_functions
+
+to_source=("$HOME/.zsh_functions" "/usr/share/doc/pkgfile/command-not-found.zsh" \
+    "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh")
+
+for file in "to_source[@]"; do
+    if [ -f "$file" ]; then
+        source "$file"
+    fi
+done
+
 
 if [ "$TERM" = "linux" ]; then
     echo -en "\e]PB657b83" # S_base00
@@ -96,8 +107,6 @@ fi
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='vim'
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -113,13 +122,23 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shit='sudo $(fc -nl -1)'
-alias nano='nvim'
-alias vi='nvim'
-alias vim='nvim'
-#alias :q='exit'
+
+# Make nvim all the things if it exists otherwise
+# vim 5ever
+if which nvim &> /dev/null; then
+    export EDITOR='nvim'
+    alias nano='nvim'
+    alias vi='nvim'
+    alias vim='nvim'
+else
+    export EDITOR='vim'
+    alias nano='vim'
+    alias vi='vim'
+fi
+
+alias :q='exit'
 
 export BROWSER=firefox
-
 
 function dad_joke () {
     curl -sL https://icanhazdadjoke.com | \

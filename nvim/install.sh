@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "setting up vim"
 # Create necessary directories
 mkdir -p ${HOME}/.config/nvim/{autoload,undodir}
 

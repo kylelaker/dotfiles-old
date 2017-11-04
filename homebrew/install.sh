@@ -7,6 +7,7 @@
 
 # Check for Homebrew
 
+# Only continue if on macOS
 if [ "$(uname -s)" != "Darwin" ]; then
     exit
 fi
