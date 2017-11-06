@@ -136,6 +136,10 @@ else
     alias vi='vim'
 fi
 
+if which top &> /dev/null; then
+    alias top='htop'
+fi
+
 alias :q='exit'
 
 export BROWSER=firefox
