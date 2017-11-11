@@ -6,22 +6,6 @@ separator_block_width=15
 markup=pango
 color=#eee8d5
 
-[temperature]
-label=
-command=/usr/share/i3blocks/temperature --chip coretemp-isa-0000
-interval=1
-#separator=false
-#separator_block_width=7
-
-[fan-speed]
-label=
-interval=5
-
-[memory]
-label=
-command=/usr/share/i3blocks/memory
-interval=1
-
 # Show wifi network name -- clicking == notification w/ IP address
 [wifi]
 label=
