@@ -153,3 +153,9 @@ if [[ "$(hostname)" == "student" ]]; then
     dad_joke
 fi
 
+# sdkman is used for installing Kotlin. Clean up the nasty stuff they require
+# in .zshrc
+if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+    export SDKMAN_DIR="$HOME/.sdkman"
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
