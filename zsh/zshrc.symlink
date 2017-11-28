@@ -136,7 +136,7 @@ else
     alias vi='vim'
 fi
 
-if which top &> /dev/null; then
+if which htop &> /dev/null; then
     alias top='htop'
 fi
 
