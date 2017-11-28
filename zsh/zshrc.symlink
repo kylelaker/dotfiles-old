@@ -143,6 +143,7 @@ fi
 alias :q='exit'
 
 export BROWSER=firefox
+export GPG_TTY=$(tty)
 
 function dad_joke () {
     curl -sL https://icanhazdadjoke.com | \
