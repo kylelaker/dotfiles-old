@@ -4,22 +4,29 @@ Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
 Xft.hintstyle: hintslight
-!Xft.dpi:       148
+!Xft.dpi:       120
 Xft.lcdfilter: lcddefault
 
 ! rofi
-rofi.modi: run
+rofi.modi: run,ssh,drun,window
 rofi.font: Fira Code 14
 rofi.width: 100
 rofi.lines: 5
 rofi.columns: 1
 rofi.opacity: 80
 !                  bg         fg         altbg      hlbg       hlfg
-rofi.color-normal: #20002b36, #839496,   #20002b36, #40073642, #93a1a1
-rofi.color-urgent: #BF002b36, #BF839496, #BF002b36, #BF073642, #BF93a1a1
-rofi.color-active: #BF002b36, #BF839496, #BF002b36, #BF073642, #BF93a1a1
-rofi.color-window: #E6002b36, #BF2aa198, #BF2aa198
+!rofi.color-normal: #20002b36, #839496,   #20002b36, #40073642, #93a1a1
+!rofi.color-urgent: #BF002b36, #BF839496, #BF002b36, #BF073642, #BF93a1a1
+!rofi.color-active: #BF002b36, #BF839496, #BF002b36, #BF073642, #BF93a1a1
+!rofi.color-window: #E6002b36, #BF2aa198, #BF2aa198
 rofi.color-enabled: true
+
+!                  bg         border   separator
+rofi.color-window: #dd002b36, #002b36, #dd073642
+!                  bg         fg       altbg      hlbg       hlfg
+rofi.color-normal: #dd002b36, #839496, #00002b36, #dd073642, #859900
+rofi.color-active: #dd002b36, #268bd2, #00002b36, #dd073642, #268bd2
+rofi.color-urgent: #dd002b36, #d33682, #00002b36, #dd073642, #d33682
 
 rofi.bw: 0
 rofi.location: 2

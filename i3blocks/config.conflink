@@ -7,6 +7,10 @@ markup=pango
 color=#eee8d5
 
 # Show wifi network name -- clicking == notification w/ IP address
+[vpn]
+command=/usr/share/i3blocks/openvpn
+interval=1
+
 [wifi]
 label=
 instance=wlp3s0

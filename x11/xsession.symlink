@@ -40,5 +40,6 @@ if [ -f "$fehbgscript" ]; then
     eval "$fehbgscript"
 fi
 
+#xrandr --dpi 144
 numlockx on &
 exec i3
