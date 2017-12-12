@@ -33,20 +33,19 @@ new_window pixel 1
 # Define workspaces
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
+set $ws3 "3: "
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
-set $ws10 "10:"
+set $ws10 "10:"
 
 # Assign applications to workspaces
 assign [class="Firefox"] $ws1
 #assign [class="konsole"] $ws2
 assign [class="Thunderbird"] $ws3
-assign [class="Google-chrome"] $ws10
 assign [class="libreoffice*"] $ws5
 assign [class="jetbrains-idea*"] $ws4
 
@@ -123,7 +122,7 @@ bar {
     status_command i3blocks
     i3bar_command i3bar
     position top
-    font pango:Fira Code Retina,"Font Awesome" 10
+    font pango:Fira Code Retina,"Font Awesome","Font Awesome 5 Free","Font Awesome 5 Brands" 12
     colors {
         background #002b36f0
         statusline #ffffff
@@ -147,7 +146,7 @@ client.urgent           #002b36 #dc322f    #fdf6e3 #002b36   #00000000
 workspace_auto_back_and_forth yes
 
 # Power settings from the Arch wiki
-set $Locker dm-tool lock
+set $Locker lock
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
