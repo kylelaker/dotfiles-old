@@ -42,4 +42,4 @@ fi
 
 #xrandr --dpi 144
 numlockx on &
-exec i3
+exec /usr/local/bin/i3
