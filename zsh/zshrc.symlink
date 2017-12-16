@@ -141,6 +141,9 @@ if which htop &> /dev/null; then
 fi
 
 alias :q='exit'
+function mkcd() {
+    mkdir "$@" && cd $_
+}
 
 export BROWSER=firefox
 export GPG_TTY=$(tty)
