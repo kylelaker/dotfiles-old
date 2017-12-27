@@ -41,5 +41,5 @@ if [ -f "$fehbgscript" ]; then
 fi
 
 #xrandr --dpi 144
-numlockx on &
-exec /usr/local/bin/i3
+#numlockx on &
+exec i3
