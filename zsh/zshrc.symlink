@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 # Prevent to_source from leaking out of the rc file
 function () {
     local to_source=("$HOME/.zsh_functions"
+        "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
         "/usr/share/doc/pkgfile/command-not-found.zsh" \
         "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
         "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh")
