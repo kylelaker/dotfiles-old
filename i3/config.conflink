@@ -246,6 +246,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
+bindsym $mod+y fullscreen disable; floating enable; resize set 1024 648; sticky enable; move window to position 1520 54
 
 # Exit/refresh/reload bindings
 bindsym $mod+Shift+e exec "i3-nagbar -f 'pango: SFNS Display, 12' -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
