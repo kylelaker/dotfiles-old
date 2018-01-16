@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
